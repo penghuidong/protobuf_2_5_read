@@ -2,8 +2,11 @@
 
 package tutorial;
 
+
 option java_package = "com.example.tutorial";
 option java_outer_classname = "AddressBookProtos";
+
+//option optimize_for = LITE_RUNTIME;
 
 message Person {
   required string name = 1;
