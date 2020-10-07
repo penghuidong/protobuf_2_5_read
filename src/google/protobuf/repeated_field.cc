@@ -48,7 +48,7 @@ void RepeatedPtrFieldBase::Reserve(int new_size) {
   void** old_elements = elements_;
   total_size_ = max(kMinRepeatedFieldAllocationSize,
                     max(total_size_ * 2, new_size));
-  elements_ = new void*[total_size_];
+  elements_ = new void*[total_size_];  // new一个指针数组， 这种用法比较少见， tag
   if (old_elements != NULL) {
     memcpy(elements_, old_elements, allocated_size_ * sizeof(elements_[0]));
     delete [] old_elements;

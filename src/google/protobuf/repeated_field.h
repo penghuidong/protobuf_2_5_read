@@ -68,7 +68,7 @@ class Message;
 
 namespace internal {
 
-static const int kMinRepeatedFieldAllocationSize = 4;
+static const int kMinRepeatedFieldAllocationSize = 4;  // 为啥是4？ 不是8,16？
 
 // A utility function for logging that doesn't need any template types.
 void LogIndexOutOfBounds(int index, int size);
@@ -313,10 +313,10 @@ class LIBPROTOBUF_EXPORT RepeatedPtrFieldBase {
 
   static const int kInitialSize = 0;
 
-  void** elements_;
-  int    current_size_;
+  void** elements_;  // 指针数组，管理已分配内存的元素
+  int    current_size_; // 当前元素个数 
   int    allocated_size_;
-  int    total_size_;
+  int    total_size_; // elements_指针数组的大小
 
   template <typename TypeHandler>
   static inline typename TypeHandler::Type* cast(void* element) {
