@@ -683,6 +683,7 @@ class LIBPROTOBUF_EXPORT Reflection {
   void* MutableRawRepeatedString(
       Message* message, const FieldDescriptor* field, bool is_string) const;
 
+  // damonpeng注： 这个宏需要在private域中使用
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(Reflection);
 };
 
